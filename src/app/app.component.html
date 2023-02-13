@@ -68,6 +68,7 @@
 
   .content {
     display: flex;
+    background: white;
     margin: 82px auto 32px;
     padding: 0 16px;
     max-width: 960px;
@@ -300,6 +301,16 @@
       visibility: hidden;
     }
   }
+
+  .fullscreen {
+    border : 1px solid #ff6767;
+    background: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
 </style>
 
 <!-- Toolbar -->
@@ -325,7 +336,19 @@
     </a>
 </div>
 
-<div class="content" role="main">
+
+
+<div class="content" role="main"  id='main-container' >
+
+  <div id="ph-login-container"></div>
+
+  <button
+    id="fullscreenButton"
+    class="fullscreen"
+    (click)="toggleFullScreen()"
+  >
+    Toggle Fullscreen
+  </button>
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
