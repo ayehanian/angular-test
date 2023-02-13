@@ -4,6 +4,7 @@ WORKDIR /app
 # Copy app files
 COPY . .
 # Build the app
+RUN npm install @angular/cli
 RUN npm install
 RUN ng build
 
