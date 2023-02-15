@@ -78,6 +78,17 @@ export class AppComponent {
         return result;
       };
 
+     self.onFullScreenOn = function() {
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
+            window.webkit.messageHandlers.submit.postMessage('toggleFullScreen');
+        }
+        if (window.androidInterface ) window.androidInterface.isFullscreenOn()
+    };
+
+    self.onFullScreenOff = function() {
+        if (window.androidInterface ) window.androidInterface.isFullscreenOff()
+    };
+      
       function fullScreenChanged (event) {
         if (document.fullscreenElement) {
           if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
